@@ -1,0 +1,86 @@
+\ProvidesPackage{neurodata}
+
+\usepackage{fullpage,fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{times}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{wrapfig,sidecap}
+\usepackage{xspace}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[colorlinks=true,pagebackref,linkcolor=magenta]{hyperref}
+\usepackage[sort&compress,comma,square,numbers]{natbib}
+\usepackage{pict2e}
+\usepackage[nottoc]{tocbibind} %\usepackage[nottoc,numbib]{tocbibind}
+\usepackage{paralist}
+\usepackage{multicol}
+\usepackage{lettrine}
+\usepackage[scaled]{helvet}
+%\usepackage{helvet}
+\usepackage{authblk}
+\usepackage[linecolor=dark_blue, linewidth=1.5pt, skipabove=4pt, nobreak=true]{mdframed}
+\usepackage{tikz}
+\usepackage{lineno}
+\usepackage[final]{changes}
+\usepackage{todonotes}
+\usepackage{color}
+
+
+%==========================
+% NeuroData template Below
+%==========================
+
+% Define Fonts
+%==============
+\RequirePackage{titlesec}
+\RequirePackage[font={normalsize},{singlelinecheck=false}]{caption}
+\renewcommand\familydefault{\sfdefault} 
+
+% Define Colours
+%================
+\definecolor{MSBlue}{rgb}{.204,.353,.541}
+\definecolor{slate}{rgb}{0.156,0.184,0.180}
+\definecolor{lgray}{rgb}{0.312,0.368,0.360}
+
+% Define Headings
+%=================
+\titleformat*{\section}{\color{MSBlue}\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries\color{MSBlue}}
+\titleformat*{\subsubsection}{\bfseries\color{MSBlue}}
+\titleformat*{\paragraph}{\bfseries\color{slate}}
+
+% Reformat Title and Abstract
+%=============================
+\renewcommand\abstractname{\sffamily\color{slate}Abstract}
+%\makeatletter
+\renewcommand\@maketitle{%
+  \noindent\parbox{1\textwidth}{
+  \color{MSBlue} {\bfseries\Huge{{\@title \par \hfill}}}
+  \par
+  \color{lgray}{
+    \@author
+    \vspace{15pt}
+    }
+  }
+}
+
+
+
+% Page Settings
+%=============================
+
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+
+\RequirePackage{hyperref}
+
+% Make Endnotes
+%===============
+%\RequirePackage{endnotes}
+%\let\footnote\endnote
