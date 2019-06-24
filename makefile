@@ -1,5 +1,5 @@
 LATEX = pdflatex
-TEX = nd_template
+TEX = latex-template
 BIBTEX = bibtex
 
 default: $(TEX).tex
