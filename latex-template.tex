@@ -1,13 +1,12 @@
-\documentclass[11pt]{article}
-\usepackage{lipsum}
+\documentclass{article}
 \usepackage{neurodata}
+\input{preamble.tex}
 
-%\input{preamble.tex}
 
 \title{Template}
 
 \author[1,2]{Joshua T.~Vogelstein\thanks{jovo@jhu.edu}}
-\affil[1]{Department of Biomedical Engineering, Institute for Computational Medicine, Kavli Neuroscience Discovery Institute, Johns Hopkins University} 
+\affil[1]{Department of Biomedical Engineering, Institute for Computational Medicine, Kavli~Neuroscience~Discovery Institute, Johns Hopkins University} 
 \affil[2]{University of Something Else}
 
 
@@ -25,7 +24,7 @@
 
 The bibliography file has a relatively recent copy of all neurodata pubs.
 
-\lipsum[1][1-3]
+
 
 \section{This is a section}
 % @jlp: the first paragraph after the start of a new section/subsection should not be indented.
@@ -36,7 +35,7 @@ The quick brown fox jumps over the lazy dog Eq.~\eqref{eq:1}.
 
 \textbf{The quick brown fox jumps over the lazy dog} Figure \ref{fig:lion}.
 
-\emph{\textbf{The quick brown fox jumps over the lazy dog}.}
+\emph{\textbf{The quick brown fox jumps over the lazy dog}.  \citet{article}}
 
 \sct{The quick brown fox jumps over the lazy dog.}\todo{Add cats}
 
@@ -54,30 +53,29 @@ e^{i\pi} - 1 &= 0,\\
 \end{align}
 
 
-\newpage
+% \newpage
 % @jlp: itemize and enumerate start on the left side the same place as regular non-indented text.
 Enumerate:
-\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
-  \item \lipsum[1][1-3]
-  \item \lipsum[2][1-3]
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt, noitemsep]
+  \item The quick brown fox jumps over the lazy dog
+  \item The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
 \end{enumerate}
 
 Itemize:
-\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
-  \item \lipsum[3][1-3]
-  \item \lipsum[4][1-3]
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt, noitemsep]
+  \item The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+  \item The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
 \end{itemize}
 
 
 Description:
-\begin{description}[wide, labelwidth=!, labelindent=0pt]
-  \item[The] The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-  \item[Quick] brown fox jumps over the lazy dog
+\begin{description}[wide, labelwidth=!, labelindent=0pt, noitemsep]
+  \item[The] The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. 
+  \item[Quick] brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.
 \end{description}
 
-\lipsum[5][1-3]
 
-\newpage
+% \newpage
 % @jlp: default table respects the page margins
 % @jovo: that is the resposbibility of the author on a per table basis.
 \begin{table}[!h]
@@ -176,14 +174,9 @@ The quick brown fox jumps over the lazy dog.
 \end{algorithm}
 
 \clearpage
-\bibliographystyle{naturemag}
+\bibliographystyle{plainnat}
 \bibliography{template.bib}
 
 
 \end{document}
 
-
-% MGC: 17,70,102
-% Mcorr: 34, 93, 144
-% Dcorr: 37, 96, 179
-% HHG: 13, 89, 112
