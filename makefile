@@ -5,7 +5,7 @@ BIBTEX = bibtex
 default: $(TEX).tex
 	$(RM) -f  *.blg *.dvi *.log *.toc *.lof *.lot *.cb *.bbl *.brf *.out *.aux $(TEX).ps;
 	$(LATEX) $(TEX).tex; $(BIBTEX) $(TEX); $(LATEX) $(TEX).tex; $(LATEX) $(TEX).tex;
-	open $(TEX).pdf &
+	open -g $(TEX).pdf &
 
 clean:
 	$(RM) -f *.aux *.blg *.dvi *.log *.toc *.lof *.lot *.cb *.bbl $(TEX).ps *~;

@@ -96,7 +96,7 @@
 \headsep=0.0in
 \renewcommand{\headrulewidth}{0pt}
 
-\setlength{\parindent}{0em}
+\setlength{\parindent}{0pt}
 \setlength{\parskip}{0.5em}
 
     %% Define Headings
@@ -118,7 +118,10 @@
 % Reformat Title and Abstract
 %=============================
 \renewcommand\abstractname{}
+\renewenvironment{abstract}{\bfseries}{}
+
 \makeatletter
+
 \renewcommand\@maketitle{%
   %\vspace{-25pt}
   \noindent
@@ -131,8 +134,6 @@
     }
   }
 }
-
-
 
 
 %%%%%%%%%%% EDITING MACROS %%%%%%%%%%%%%
