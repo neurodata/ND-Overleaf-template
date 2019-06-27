@@ -7,6 +7,17 @@
 %==========================
 \ProvidesPackage{neurodata}
 
+%%% Change spacing in TOC
+%\usepackage{tocloft}
+%\renewcommand\cftchapafterpnum{\vskip10pt}
+%\renewcommand\cftsecafterpnum{\vskip15pt}
+\usepackage{etoolbox}
+\makeatletter
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\addvspace{3\p@}}}{}{}
+\pretocmd{\section}{\addtocontents{toc}{\protect\addvspace{3\p@}}}{}{}
+\pretocmd{\subsection}{\addtocontents{toc}{\protect\addvspace{3\p@}}}{}{}
+\makeatother
+
 
 %%% mathfonts, equation environments and eqref, ...
 \usepackage{amsfonts,amsmath,amssymb,amsthm}
@@ -33,9 +44,12 @@
 \usepackage{fancyhdr}
 \usepackage{fullpage}
 
-%%% For todo's and enumitem
+%%% For todo's and enumitem with special global options
 \usepackage{todonotes}
 \usepackage{enumitem}
+\setlist[enumerate]{wide, labelwidth=!, labelindent=0pt, noitemsep}
+\setlist[itemize]{wide, labelwidth=!, labelindent=0pt, noitemsep}
+\setlist[description]{wide, labelwidth=!, labelindent=0pt, noitemsep}
 
 
 %%% For url and hypref 

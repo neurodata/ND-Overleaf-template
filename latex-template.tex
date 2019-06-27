@@ -2,7 +2,6 @@
 \usepackage{neurodata}
 \input{preamble.tex}
 
-
 \title{Template}
 
 \author[1,2]{Joshua T.~Vogelstein\thanks{jovo@jhu.edu}}
@@ -14,6 +13,8 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
+
 
 \begin{abstract}
 This is the abstract.
@@ -54,20 +55,20 @@ e^{i\pi} - 1 &= 0,\\
 % \newpage
 % @jlp: itemize and enumerate start on the left side the same place as regular non-indented text.
 Enumerate:
-\begin{enumerate}[wide, labelwidth=!, labelindent=0pt, noitemsep]
+\begin{enumerate}
   \item The quick brown fox jumps over the lazy dog
   \item The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
 \end{enumerate}
 
 Itemize:
-\begin{itemize}[wide, labelwidth=!, labelindent=0pt, noitemsep]
+\begin{itemize}
   \item The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
   \item The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
 \end{itemize}
 
 
 Description:
-\begin{description}[wide, labelwidth=!, labelindent=0pt, noitemsep]
+\begin{description}
   \item[The] The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
   \item[Quick] brown fox jumps over the lazy dog.  The quick brown fox jumps over the lazy dog.
 \end{description}
@@ -141,12 +142,13 @@ The quick brown fox jumps over the lazy dog.
 \subparagraph{This is a subparagraph}
 The quick brown fox jumps over the lazy dog.
 
-\begin{figure}
+\begin{figure}[h!!!]
 \centering
-\includegraphics[width=0.5\textwidth]{lion_parrots.JPG}
+\includegraphics[width=0.25\textwidth]{lion_parrots.JPG}
   \caption{Lion is awesome.}
 \label{fig:lion}
 \end{figure}
+\eject
 
 
 
@@ -170,6 +172,14 @@ The quick brown fox jumps over the lazy dog.
 \EndFunction
 \end{algorithmic}
 \end{algorithm}
+
+
+
+\section{Second \textsection\, so that we have more things in the TOC}
+\lipsum[4]
+\subsection{Second \textsection\textsection\, so that we have more things in the TOC}
+\lipsum[5]
+
 
 \clearpage
 
