@@ -18,7 +18,6 @@
 \pretocmd{\subsection}{\addtocontents{toc}{\protect\addvspace{3\p@}}}{}{}
 \makeatother
 
-
 %%% mathfonts, equation environments and eqref, ...
 \usepackage{amsfonts,amsmath,amssymb,amsthm}
 \usepackage{bbm}
@@ -101,7 +100,8 @@
 
 %%%%%%%%%% PAGE SETTING STUFF %%%%%%%%%%%%%%%%
 \RequirePackage{titlesec}
-%\setlength{\parindent}{0pt}
+\RequirePackage{titletoc}
+\usepackage{chngcntr}
 
 \renewcommand{\familydefault}{\sfdefault}
 \textwidth=6.5in
@@ -112,24 +112,45 @@
 \headsep=0.0in
 \renewcommand{\headrulewidth}{0pt}
 
+%\linespread{0.75}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.5em}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\topmargin}{0pt}
+\setlength{\topsep}{0pt}
+\setlength{\partopsep}{0pt}
 
-    %% Define Headings
+    %% Define Headings and section task
     %%=================
+\newcounter{task}
+\titleclass{\task}{straight}[\section]
+\titleformat{\task}[hang]
+  {\normalfont\LARGE\bfseries}{Task \thetask:}{1em}{}
+%\titlespacing*{\task}{0pt}{3.5ex plus 1ex minus .2ex}{2.3 ex plus .2ex}
+\renewcommand{\thetask}{\arabic{task}}
+
+\titlecontents{task}
+              [3.8em] % ie, 1.5em (chapter) + 2.3em
+              {}
+              {\contentslabel{2.3em}}
+              {\hspace*{-2.3em}}
+              {\titlerule*[1pc]{.}\contentspage}
+
 \titleformat*{\section}{\color{MSBlue}\bfseries\Large}
 \titleformat*{\subsection}{\color{MSBlue}\bfseries\large}
+\titleformat*{\task}{\color{MSBlue}\bfseries\large}
 \titleformat*{\subsubsection}{\color{MSBlue}\bfseries\normalsize}
 \titleformat*{\paragraph}{\color{MSBlue}\normalsize}
 %
-%%\titlespacing{\task}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 %% @jovo -- section spacing here
 %% USAGE: \titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
 \titlespacing*{\section}{0ex}{1ex}{0ex}
 \titlespacing*{\subsection}{0ex}{1ex}{0ex}
 \titlespacing*{\paragraph}{0ex}{1ex}{1ex}
 \titlespacing*{\subparagraph}{0pt}{1ex}{2ex}
-\titlespacing*{\task}{0pt}{0ex}{0ex}
+\titlespacing*{\task}{1em}{0ex}{0ex}
 
 % Reformat Title and Abstract
 %=============================
@@ -181,7 +202,6 @@
 \newtheorem{rem}{Remark}%[section]
 \newtheorem{cor}[lem]{Corollary}
 \newtheorem{model}{Model}
-\newtheorem{remark}{Remark}
 
 \newcommand{\bla}{\begin{block}}
 \newcommand{\blb}{\end{block}}
