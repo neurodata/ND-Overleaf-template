@@ -141,12 +141,28 @@
               {\hspace*{-2.3em}}
               {\titlerule*[1pc]{.}\contentspage}
 
+\newcounter{subtask}
+\titleclass{\subtask}{straight}[\subsection]
+\titleformat{\subtask}[hang]
+  {}{Subtask \thetask.\thesubtask:}{1em}{}
+\titlespacing*{\subtask}{0pt}{3.5ex plus 1ex minus .2ex}{2.3 ex plus .2ex}
+\renewcommand{\thesubtask}{\arabic{subtask}}
+
+\titlecontents{subtask}
+              [3.8em] % ie, 1.5em (chapter) + 2.3em
+              {}
+              {\contentslabel{2.3em}}
+              {\hspace*{-2.3em}}
+              {\titlerule*[1pc]{.}\contentspage}
+
 \titleformat*{\section}{\color{MSBlue}\bfseries\Large}
 \titleformat*{\subsection}{\color{MSBlue}\bfseries\large}
 \titleformat*{\task}{\color{MSBlue}\bfseries\large}
+\titleformat*{\subtask}{\color{JHUBlue}\bfseries\normalsize}
 \titleformat*{\subsubsection}{\color{MSBlue}\bfseries\normalsize}
 \titleformat*{\paragraph}{\color{MSBlue}\normalsize}
 \titleformat*{\subparagraph}{\color{MSBlue}\itshape\normalsize}
+
 %
 %% @jovo -- section spacing here
 %% USAGE: \titlespacing*{<command>}{<left>}{<before-sep>}{<after-sep>}
