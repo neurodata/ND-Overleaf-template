@@ -1,0 +1,81 @@
+\documentclass{article}[12pt]
+
+\let\proglang=\textsf
+\newcommand{\pkg}[1]{{\fontseries{b}\selectfont #1}}
+
+% Custom commands
+
+% Page geometry
+\usepackage{geometry}
+\geometry{
+  margin=0.5in,% Equal margin of 0.5in from all four sides
+  includefoot% Include only the footer in the margin calculations, since you don't have a header
+}
+
+% Header/footer
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}% Page style will be fancy
+\fancyhf{}% Clear headers and footers
+\renewcommand{\headrulewidth}{0pt}% No header rule
+\renewcommand{\footrulewidth}{0pt}% No footer rule (default)
+%\fancyfoot[L]{John Smith \quad - \quad \href{mailto:john@smith.com}{{\small john@smith.com}}}
+%\fancyfoot[C]{John Smith \quad - \quad \href{mailto:john@smith.com}{{\small john@smith.com}}}
+%\fancyfoot[R]{\thepage\ of \pageref{LastPage}}
+
+\usepackage[svgnames,table]{xcolor}
+\newcommand{\specialcell}[2][l]{%
+\begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+\usepackage[normalem]{ulem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx,lipsum}
+
+% For Blind text, remove when using actual text
+\usepackage{blindtext}
+
+\setlength{\parindent}{0pt}% No paragraph indentation
+\setlength{\parskip}{.5\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}
+
+\begin{document}
+\begin{tabular}[t]{@{}l@{}l@{}}
+    \specialcell{\textbf{Center for Imaging Science}\\The Johns Hopkins University\\Whiting School of Engineering\\301 Clark Hall 3400 N. Charles Street\\Baltimore MD 21218-2686\\410-516-3826 / Fax 410-516-4594} & \raisebox{-.43\height}{\includegraphics[width=5.1in]{image1.png}}
+\end{tabular}
+
+% TO details
+\begin{tabular}{@{}l@{}}
+    {} \\ % Editor Names
+    % Address of editors of journal (check about in journal info)
+    {}
+\end{tabular}
+
+\bigskip
+
+\begin{tabular}{@{}l@{}}
+  \today \\[\normalbaselineskip]
+\end{tabular}
+
+% Name of editors of journal
+Dear {},
+
+\bigskip
+
+% Say title of paper and goals of publication
+\blindtext
+
+% Summarize accomplishments of paper and thank them for considering publication
+\blindtext
+
+\bigskip
+
+\begin{tabular}{@{}l@{}}
+  Sincerely, \\
+  % Insert @jovo's signature graphic below
+  % \includegraphics[width=1.39in,height=0.9in]{jovo-sig.png}\\
+  \href{https://neurodata.io/about/}{\textcolor[HTML]{434343}{\uline{Joshua T. Vogelstein}}, Assistant Professor}\\
+  \href{https://www.bme.jhu.edu/}{\textcolor[HTML]{434343}{\uline{Dept. of Biomedical Engineering}}}\\
+  \href{https://icm.jhu.edu/}{\textcolor[HTML]{434343}{\uline{Institute for Computational Medicine}}}\\
+  \href{https://kavlijhu.org/}{\textcolor[HTML]{434343}{\uline{Kavli Neuroscience Discovery Institute}}}\\
+  \href{https://www.jhu.edu/}{\textcolor[HTML]{434343}{\uline{Johns Hopkins University}}}\\
+  [2\normalbaselineskip]
+\end{tabular}
+
+\end{document}
